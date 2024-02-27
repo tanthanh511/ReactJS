@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+</head>
+<body>
+    <script>
+        // react - dom 
+        const ulDom= document.createElement('ul')
+        const liDOM1= document.createElement('li')
+        liDOM1.innerText = 'js'
+        ulDom.id = 'ul-id'
+        ulDom.style = 'color: red ;font-size: 30px'
+        const liDOM2= document.createElement('li')
+        liDOM2.innerText = 'react'
+
+        ulDom.appendChild(liDOM1)
+        ulDom.appendChild(liDOM2)
+        document.body.appendChild(ulDom)
+
+        // react - element
+        const ulReact = React.createElement(
+            'ul',
+            {
+                id:'ul-id',
+                style: 'color: red; font-size: 30px'
+            },
+            React.createElement('li',null,'js'),
+            React.createElement('li', null, 'react')
+        )
+        console.log(ulReact);
+
+    </script>
+    
+</body>
+</html>
