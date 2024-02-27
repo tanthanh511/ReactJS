@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // react - element
+      // EX1
+      const ulReact = React.createElement(
+        "ul",
+        {
+          style: "color: red; font-size: 30px",
+        },
+        React.createElement("li", null, "js"),
+        React.createElement("li", null, "react")
+      );
+      
+        //EX2
+        const postItem = React.createElement(
+            'div',
+            {
+                className: 'post-item'
+            },
+            React.createElement(
+                'h2',
+                {
+                    title:'hoc react tai f8'
+                },
+                'Hoc react js'
+            ),
+            React.createElement(
+                'p',
+                null,
+                'Hoc tu co ban toi nang cao'
+            )
+        )
+        
+        const root = document.getElementById('root')
+        ReactDOM.render(postItem, root)
+
+    </script>
+  </body>
+</html>
+ 
+<!-- Alt+ nút di chuyển lên: dùng để chuyển 1 hoặc nhiều dòng lên trên một dòng  -->
+
+<!-- Nếu sử dụng phiên bản react 18 thì thay đổi đường link thư viện và thay bằng createRoot -->
+<!-- const root = document.getElementById('root')
+const root = ReactDOM.createRoot(root)
+root.render(postItem) -->
