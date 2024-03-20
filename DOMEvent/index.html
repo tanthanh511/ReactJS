@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel" >
+      const courses = [
+        {
+          "id": 1,
+          "name": " thanh",
+          "age": 20,
+          "desc": "aaaaaaaaaaaaaaaaaaâaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "content": "oooooooooooooooooooooooooooooooo",
+        },
+        {
+          "id": 2,
+          "name": "tn thanh",
+          "age": 20,
+          "desc":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "content": "oooooooooooooooooooooooooooooooo",
+        },
+        {
+          "id": 3,
+          "name": "tan tanh",
+          "age": 20,
+          "desc": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "content": "oooooooooooooooooooooooooooooooo",
+        },
+        {
+          "id": 4,
+          "name": "tanhanh",
+          "age": 20,
+          "desc": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "content": "oooooooooooooooooooooooooooooooo",
+        },
+        {
+          "id": 5,
+          "name": "tan h",
+          "age": 20,
+          "desc": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "content": "oooooooooooooooooooooooooooooooo",
+        },
+      ]; 
+       
+
+      const CourseItem = ({course}) => (
+        <div>
+          <h2 onClick={()=>{
+            alert(course.name)
+          }}>{course.name}</h2>
+          <p>{course.age}</p>
+          <p>{course.desc}</p>
+        </div>
+      );
+
+      function Main() {
+        return (
+          <div id="wrapper">
+            {courses.map((course) => (
+              <CourseItem key={course.id} 
+              course={course}
+              />
+            ))}
+          </div>    
+        );
+      }
+      ReactDOM.render(<Main />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
